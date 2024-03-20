@@ -12,6 +12,7 @@ import org.springframework.context.annotation.Configuration;
                 description = "Api para consumir legados."
         )
 )
+//configuracion de OpenApi
 public class OpenApiConfig
 {
 }
