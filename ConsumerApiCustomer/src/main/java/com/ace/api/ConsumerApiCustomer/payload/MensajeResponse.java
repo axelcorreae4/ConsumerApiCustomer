@@ -1,15 +1,20 @@
 package com.ace.api.ConsumerApiCustomer.payload;
 
+import com.ace.api.ConsumerApiCustomer.model.dto.CustomerDto;
+import com.ace.api.ConsumerApiCustomer.model.entity.Customer;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.ToString;
 
+import java.io.Serializable;
+import java.util.ArrayList;
+
 @Data
 @AllArgsConstructor
 @Builder
 @ToString
-public class MensajeResponse {
+public class MensajeResponse implements Serializable {
     private String mensaje;
-    private Object object;
+    private ArrayList<CustomerDto> clientes;
 }
