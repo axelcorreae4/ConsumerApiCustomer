@@ -25,17 +25,16 @@ import java.util.ArrayList;
 public class ConsumerApi implements Serializable {
 
     private final String urlFakeApi;
-    @Getter
-    @Setter
-    private String apiKey;
+
     private final Logger log = LoggerFactory.getLogger(ConsumerApi.class);
     private OkHttpClient client = new OkHttpClient();
 
     public ConsumerApi(String urlFakeApi){
+
         this.urlFakeApi = urlFakeApi;
     }
 
-    public MensajeResponse listaClientesFake(){
+    public MensajeResponse listaClientesFake(String apiKey){
         OkHttpClient client = new OkHttpClient();
         ObjectMapper objectMapper = new ObjectMapper();
 
@@ -44,7 +43,7 @@ public class ConsumerApi implements Serializable {
         MensajeResponse mensajeResponse = null;
 
 
-        String url = urlFakeApi + "?key=" + this.apiKey;
+        String url = urlFakeApi + "?key=" + apiKey;
         Request request = new Request.Builder()
                 .url(url)
                 .build();
